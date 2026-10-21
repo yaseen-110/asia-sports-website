@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asia Sports — sports gear, gym equipment, swimming essentials and games in Model Colony, Karachi.">
+  <title>Asia Sports | Premium Sports & Lifestyle Store</title>
+  <style>
+    :root {
+      --purple: #2f1c52;
+      --purple-deep: #201238;
+      --lime: #a8e63e;
+      --lime-dark: #8bc72b;
+      --ink: #211a2b;
+      --muted: #716b7a;
+      --paper: #f8f7fb;
+      --white: #fff;
+      --line: #e8e3ef;
+      --shadow: 0 18px 50px rgba(38, 21, 63, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .announcement { background: var(--lime); color: var(--purple-deep); text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 800; letter-spacing: .04em; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav-wrap { max-width: 1180px; margin: auto; padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 950; color: var(--purple); letter-spacing: -.04em; font-size: 21px; }
+    .brand-mark { width: 43px; height: 43px; border-radius: 14px; background: var(--purple); color: var(--lime); display: grid; place-items: center; font-size: 15px; font-weight: 950; transform: rotate(-5deg); }
+    .brand small { display: block; color: var(--muted); font-size: 9px; letter-spacing: .17em; margin-top: 2px; }
+    nav { display: flex; align-items: center; gap: 25px; font-size: 13px; font-weight: 750; }
+    nav a:hover { color: #719e1e; }
+    .cart-button { border: 0; border-radius: 999px; background: var(--purple); color: white; padding: 12px 16px; font-weight: 800; }
+    .cart-count { display: inline-grid; place-items: center; background: var(--lime); color: var(--purple); width: 22px; height: 22px; border-radius: 50%; margin-left: 6px; font-size: 12px; }
+    .hero { overflow: hidden; background: var(--purple); color: white; position: relative; }
+    .hero:before { content: ""; position: absolute; width: 470px; height: 470px; border: 80px solid rgba(168,230,62,.08); border-radius: 50%; right: -110px; top: -160px; }
+    .hero:after { content: ""; position: absolute; width: 260px; height: 260px; background: rgba(168,230,62,.07); border-radius: 50%; right: 16%; bottom: -180px; }
+    .hero-inner { max-width: 1180px; margin: auto; padding: 86px 22px 82px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; position: relative; z-index: 1; }
+    .eyebrow { color: var(--lime); text-transform: uppercase; font-size: 11px; font-weight: 900; letter-spacing: .18em; }
+    h1 { font-size: clamp(42px, 6vw, 76px); line-height: .98; letter-spacing: -.055em; margin: 18px 0; max-width: 650px; }
+    h1 span { color: var(--lime); }
+    .hero p { color: #d8d0e6; line-height: 1.75; max-width: 510px; font-size: 16px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; padding: 14px 20px; border-radius: 12px; border: 1px solid transparent; font-weight: 850; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-lime { background: var(--lime); color: var(--purple-deep); }
+    .btn-outline { border-color: rgba(255,255,255,.35); color: white; }
+    .hero-art { min-height: 310px; display: grid; place-items: center; position: relative; }
+    .hero-badge { width: min(330px, 80vw); aspect-ratio: 1; border-radius: 42% 58% 50% 50%; background: var(--lime); color: var(--purple); display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(5deg); box-shadow: 20px 24px 0 rgba(0,0,0,.15); }
+    .hero-badge .ball { font-size: 88px; line-height: 1; }
+    .hero-badge strong { font-size: 35px; font-weight: 1000; letter-spacing: -.06em; }
+    .hero-badge small { font-size: 10px; letter-spacing: .25em; font-weight: 900; margin-top: 5px; }
+    .floating-tag { position: absolute; background: white; color: var(--purple); border-radius: 12px; padding: 12px 15px; box-shadow: var(--shadow); font-size: 12px; font-weight: 900; }
+    .floating-tag.one { top: 16px; right: 0; transform: rotate(5deg); }
+    .floating-tag.two { bottom: 8px; left: 0; transform: rotate(-5deg); }
+    .section { max-width: 1180px; padding: 72px 22px; margin: auto; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 27px; }
+    .section-kicker { color: #739d22; text-transform: uppercase; letter-spacing: .16em; font-weight: 900; font-size: 10px; }
+    h2 { color: var(--purple); margin: 8px 0 0; font-size: clamp(28px, 4vw, 42px); letter-spacing: -.045em; }
+    .section-head p { color: var(--muted); max-width: 390px; line-height: 1.65; font-size: 14px; margin: 0; }
+    .categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .category { border: 1px solid var(--line); background: white; border-radius: 20px; padding: 24px 18px; min-height: 180px; transition: .2s; }
+    .category:hover { transform: translateY(-4px); border-color: var(--lime-dark); box-shadow: var(--shadow); }
+    .category-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 17px; background: #f0f7df; font-size: 27px; margin-bottom: 20px; }
+    .category h3 { margin: 0 0 7px; color: var(--purple); font-size: 17px; }
+    .category p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .products-section { background: #f0edf5; }
+    .products-inner { max-width: 1180px; padding: 72px 22px; margin: auto; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 22px 0 25px; }
+    .filter { border: 1px solid #ded7e9; color: var(--purple); background: white; border-radius: 999px; padding: 9px 15px; font-size: 12px; font-weight: 800; }
+    .filter.active, .filter:hover { background: var(--purple); color: white; border-color: var(--purple); }
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; }
+    .product { background: white; border-radius: 18px; border: 1px solid #e7e0ee; overflow: hidden; display: flex; flex-direction: column; }
+    .product-visual { height: 170px; display: grid; place-items: center; background: linear-gradient(135deg, #f7f8f1, #e9e2f4); font-size: 68px; position: relative; }
+    .product-visual .tag { position: absolute; top: 12px; left: 12px; background: var(--lime); color: var(--purple); padding: 6px 8px; border-radius: 6px; font-size: 9px; font-weight: 950; text-transform: uppercase; }
+    .product-info { padding: 17px; display: flex; flex-direction: column; flex: 1; }
+    .product-category { color: #7b9f30; font-size: 9px; letter-spacing: .13em; font-weight: 950; text-transform: uppercase; }
+    .product h3 { color: var(--purple); font-size: 15px; margin: 8px 0; }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 13px; }
+    .price { font-weight: 950; color: var(--purple); }
+    .add-btn { border: 0; background: var(--purple); color: white; border-radius: 9px; padding: 9px 11px; font-size: 11px; font-weight: 850; }
+    .add-btn:hover { background: #4b2c7e; }
+    .empty { display: none; color: var(--muted); padding: 20px 0; }
+    .about { display: grid; grid-template-columns: .9fr 1.1fr; gap: 42px; align-items: center; }
+    .about-card { border-radius: 24px; background: var(--purple); color: white; padding: 34px; min-height: 260px; display: flex; flex-direction: column; justify-content: center; }
+    .about-card strong { color: var(--lime); font-size: 36px; letter-spacing: -.04em; }
+    .about-card p { color: #d9d0e5; line-height: 1.7; }
+    .about-copy p { color: var(--muted); line-height: 1.8; font-size: 14px; }
+    .contact { background: var(--lime); }
+    .contact-inner { max-width: 1180px; padding: 55px 22px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .contact h2 { color: var(--purple); }
+    .contact p { color: #4e5e2c; margin-bottom: 0; line-height: 1.6; }
+    .contact .btn { background: var(--purple); color: white; white-space: nowrap; }
+    footer { background: var(--purple-deep); color: white; padding: 27px 22px; }
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; font-size: 12px; color: #c9bfd8; }
+    .footer-inner strong { color: white; }
+    .cart-panel { display: none; position: fixed; inset: 0; z-index: 50; background: rgba(21,13,33,.55); justify-content: flex-end; }
+    .cart-panel.open { display: flex; }
+    .cart-drawer { background: white; width: min(430px, 100%); height: 100%; padding: 24px; overflow: auto; display: flex; flex-direction: column; }
+    .cart-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 17px; }
+    .cart-head h2 { font-size: 25px; margin: 0; }
+    .close-cart { border: 0; background: #f0edf5; color: var(--purple); border-radius: 9px; padding: 9px 12px; font-weight: 900; }
+    .cart-items { flex: 1; padding: 15px 0; }
+    .cart-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .cart-row strong { color: var(--purple); font-size: 13px; }
+    .cart-row small { display: block; color: var(--muted); margin-top: 5px; }
+    .quantity { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+    .quantity button { border: 1px solid var(--line); background: white; border-radius: 6px; padding: 3px 8px; }
+    .remove { color: #a33348; background: none; border: 0; font-size: 11px; margin-top: 5px; }
+    .cart-total { border-top: 1px solid var(--line); padding-top: 18px; }
+    .total-line { display: flex; justify-content: space-between; color: var(--purple); font-weight: 950; margin-bottom: 15px; }
+    .checkout { width: 100%; border: 0; background: var(--lime); color: var(--purple); padding: 14px; border-radius: 11px; font-weight: 950; }
+    .notice { color: var(--muted); font-size: 11px; line-height: 1.5; margin-top: 10px; }
+    @media (max-width: 850px) {
+      nav { gap: 12px; } nav a { display: none; }
+      .hero-inner { grid-template-columns: 1fr; padding-top: 60px; text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-art { min-height: 290px; }
+      .categories, .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-head { align-items: start; flex-direction: column; }
+      .about { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .nav-wrap { padding: 12px 14px; gap: 10px; }
+      .brand { font-size: 18px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .cart-button { padding: 10px 11px; font-size: 12px; }
+      .hero-inner { padding: 52px 18px 60px; }
+      .hero-badge { width: 250px; }
+      .hero-badge .ball { font-size: 68px; }
+      .hero-badge strong { font-size: 28px; }
+      .section, .products-inner { padding: 52px 16px; }
+      .categories { gap: 10px; }
+      .category { padding: 16px 13px; min-height: 160px; }
+      .product-grid { gap: 10px; }
+      .product-visual { height: 130px; font-size: 52px; }
+      .product-info { padding: 12px; }
+      .product h3 { font-size: 13px; }
+      .product-bottom { align-items: flex-start; flex-direction: column; }
+      .add-btn { width: 100%; }
+      .contact-inner { padding: 42px 18px; align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">YOUR GAME. YOUR GEAR. YOUR NEXT LEVEL.</div>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Asia Sports home">
+        <span class="brand-mark">AS</span>
+        <span>ASIA SPORTS<small>LEVEL UP YOUR GAME</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#categories">Categories</a><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="cart-button" id="openCart" aria-label="Open shopping cart">Cart <span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Welcome to Asia Sports</div>
+          <h1>Train stronger.<br>Play <span>smarter.</span></h1>
+          <p>Your local destination for sports gear, fitness essentials, swimming accessories and games. Find your gear and get ready for your next win.</p>
+          <div class="hero-actions">
+            <a class="btn btn-lime" href="#products">Shop products ↗</a>
+            <a class="btn btn-outline" href="#categories">Explore categories</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Asia Sports brand artwork">
+          <div class="floating-tag one">BUILT FOR EVERY GAME</div>
+          <div class="hero-badge">
+            <div class="ball" aria-hidden="true">🏏</div>
+            <strong>ASIA SPORTS</strong>
+            <small>LEVEL UP YOUR GAME</small>
+          </div>
+          <div class="floating-tag two">SPORT • FITNESS • FUN</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-head">
+        <div><div class="section-kicker">Find your game</div><h2>Shop by category</h2></div>
+        <p>Gear up for training, match day, pool time or a fun game with friends and family.</p>
+      </div>
+      <div class="categories">
+        <a class="category" href="#products" data-category-link="Cricket"><div class="category-icon">🏏</div><h3>Cricket & Sports</h3><p>Bats, balls and everyday sports essentials.</p></a>
+        <a class="category" href="#products" data-category-link="Fitness"><div class="category-icon">💪</div><h3>Gym & Fitness</h3><p>Useful equipment for your fitness routine.</p></a>
+        <a class="category" href="#products" data-category-link="Swimming"><div class="category-icon">🏊</div><h3>Swimming</h3><p>Pool accessories for a splash of fun.</p></a>
+        <a class="category" href="#products" data-category-link="Games"><div class="category-icon">♟️</div><h3>Games & Fun</h3><p>Board games and activities for everyone.</p></a>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="products-inner">
+        <div class="section-head">
+          <div><div class="section-kicker">Selected for your game</div><h2>Featured products</h2></div>
+          <p>Sample product listings to help you get started. Confirm actual stock and prices with the shop.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter products">
+          <button class="filter active" data-filter="All">All products</button>
+          <button class="filter" data-filter="Cricket">Cricket & Sports</button>
+          <button class="filter" data-filter="Fitness">Gym & Fitness</button>
+          <button class="filter" data-filter="Swimming">Swimming</button>
+          <button class="filter" data-filter="Games">Games</button>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product" data-category="Cricket" data-name="Cricket Bat" data-price="2500" data-emoji="🏏"><div class="product-visual"><span class="tag">Popular</span>🏏</div><div class="product-info"><span class="product-category">Cricket & Sports</span><h3>Cricket Bat</h3><div class="product-bottom"><span class="price">PKR 2,500</span><button class="add-btn">Add to cart +</button></div></div></article>
+          <article class="product" data-category="Cricket" data-name="Sports Ball" data-price="850" data-emoji="⚽"><div class="product-visual">⚽</div><div class="product-info"><span class="product-category">Cricket & Sports</span><h3>Sports Ball</h3><div class="product-bottom"><span class="price">PKR 850</span><button class="add-btn">Add to cart +</button></div></div></article>
+          <article class="product" data-category="Fitness" data-name="Dumbbell Pair" data-price="1800" data-emoji="🏋️"><div class="product-visual"><span class="tag">Fitness</span>🏋️</div><div class="product-info"><span class="product-category">Gym & Fitness</span><h3>Dumbbell Pair</h3><div class="product-bottom"><span class="price">PKR 1,800</span><button class="add-btn">Add to cart +</button></div></div></article>
+          <article class="product" data-category="Fitness" data-name="Skipping Rope" data-price="450" data-emoji="🪢"><div class="product-visual">🪢</div><div class="product-info"><span class="product-category">Gym & Fitness</span><h3>Skipping Rope</h3><div class="product-bottom"><span class="price">PKR 450</span><button class="add-btn">Add to cart +</button></div></div></article>
+          <article class="product" data-category="Swimming" data-name="Swimming Goggles" data-price="700" data-emoji="🥽"><div class="product-visual">🥽</div><div class="product-info"><span class="product-category">Swimming</span><h3>Swimming Goggles</h3><div class="product-bottom"><span class="price">PKR 700</span><button class="add-btn">Add to cart +</button></div></div></article>
+          <article class="product" data-category="Swimming" data-name="Swim Cap" data-price="500" data-emoji="🏊"><div class="product-visual">🏊</div><div class="product-info"><span class="product-category">Swimming</span><h3>Swim Cap</h3><div class="product-bottom"><span class="price">PKR 500</span><button class="add-btn">Add to cart +</button></div></div></article>
+          <article class="product" data-category="Games" data-name="Chess Set" data-price="1200" data-emoji="♟️"><div class="product-visual"><span class="tag">Family fun</span>♟️</div><div class="product-info"><span class="product-category">Games</span><h3>Chess Set</h3><div class="product-bottom"><span class="price">PKR 1,200</span><button class="add-btn">Add to cart +</button></div></div></article>
+          <article class="product" data-category="Games" data-name="Board Game" data-price="950" data-emoji="🎲"><div class="product-visual">🎲</div><div class="product-info"><span class="product-category">Games</span><h3>Board Game</h3><div class="product-bottom"><span class="price">PKR 950</span><button class="add-btn">Add to cart +</button></div></div></article>
+        </div>
+        <p class="empty" id="emptyMessage">No products found in this category.</p>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-card"><div class="eyebrow">Local sports store</div><strong>Play with passion.</strong><p>From practice sessions to match day, Asia Sports is here to help you find gear for your game.</p></div>
+      <div class="about-copy"><div class="section-kicker">About Asia Sports</div><h2>Your game starts here.</h2><p>Asia Sports is a local sports shop in Model Colony, Malir, Karachi. Explore sports items, fitness gear, swimming accessories and games. Product availability and prices may change, so contact us to confirm before ordering.</p><p>We welcome your questions about products, availability and orders through WhatsApp or by visiting the shop.</p></div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div><div class="section-kicker">Need help choosing?</div><h2>Let's get you game-ready.</h2><p>Contact Asia Sports for product details and availability.<br>Shop No. 1, Model Colony, Malir, Karachi.</p></div>
+        <a class="btn" href="https://wa.me/923342072271?text=Assalam-o-Alaikum%2C%20I%20want%20to%20ask%20about%20Asia%20Sports%20products." target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner"><span><strong>ASIA SPORTS</strong> — Level up your game.</span><span>Shop No. 1, Model Colony, Malir, Karachi</span><span>Phone / WhatsApp: 0334 2072271</span><span>© <span id="year"></span> Asia Sports</span></div></footer>
+
+  <div class="cart-panel" id="cartPanel" aria-hidden="true">
+    <div class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
+      <div class="cart-head"><h2>Your cart</h2><button class="close-cart" id="closeCart">Close ✕</button></div>
+      <div class="cart-items" id="cartItems"><p class="notice">Your cart is empty. Add a product to get started.</p></div>
+      <div class="cart-total"><div class="total-line"><span>Estimated total</span><span id="cartTotal">PKR 0</span></div><button class="checkout" id="checkout">Order via WhatsApp</button><p class="notice">Sample prices only. Confirm stock, final prices and delivery with Asia Sports before payment. This website does not process payments.</p></div>
+    </div>
+  </div>
+
+  <script>
+    const cart = new Map();
+    const money = value => 'PKR ' + Number(value).toLocaleString('en-PK');
+    const products = [...document.querySelectorAll('.product')].map((el, index) => ({
+      id: index, name: el.dataset.name, price: Number(el.dataset.price),
+      category: el.dataset.category, emoji: el.dataset.emoji, element: el
+    }));
+    const cartPanel = document.getElementById('cartPanel');
+    const cartItems = document.getElementById('cartItems');
+    const cartCount = document.getElementById('cartCount');
+    const cartTotal = document.getElementById('cartTotal');
+
+    function addProduct(product) {
+      const item = cart.get(product.id) || { ...product, quantity: 0 };
+      item.quantity += 1;
+      cart.set(product.id, item);
+      renderCart();
+    }
+    function changeQuantity(id, delta) {
+      const item = cart.get(id);
+      if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) cart.delete(id);
+      renderCart();
+    }
+    function renderCart() {
+      const items = [...cart.values()];
+      const count = items.reduce((sum, item) => sum + item.quantity, 0);
+      const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      cartCount.textContent = count;
+      cartTotal.textContent = money(total);
+      if (!items.length) {
+        cartItems.innerHTML = '<p class="notice">Your cart is empty. Add a product to get started.</p>';
+        return;
+      }
+      cartItems.innerHTML = items.map(item => `
+        <div class="cart-row">
+          <div><strong>${item.emoji} ${item.name}</strong><small>${money(item.price)} each</small>
+            <div class="quantity"><button data-action="minus" data-id="${item.id}" aria-label="Decrease quantity">−</button><span>${item.quantity}</span><button data-action="plus" data-id="${item.id}" aria-label="Increase quantity">+</button></div>
+            <button class="remove" data-action="remove" data-id="${item.id}">Remove</button>
+          </div>
+          <strong>${money(item.price * item.quantity)}</strong>
+        </div>`).join('');
+    }
+    function openCart() { cartPanel.classList.add('open'); cartPanel.setAttribute('aria-hidden', 'false'); }
+    function closeCart() { cartPanel.classList.remove('open'); cartPanel.setAttribute('aria-hidden', 'true'); }
+    document.querySelectorAll('.product .add-btn').forEach((button, index) => button.addEventListener('click', () => {
+      addProduct(products[index]);
+      button.textContent = 'Added ✓';
+      setTimeout(() => button.textContent = 'Add to cart +', 900);
+    }));
+    document.getElementById('openCart').addEventListener('click', openCart);
+    document.getElementById('closeCart').addEventListener('click', closeCart);
+    cartPanel.addEventListener('click', event => { if (event.target === cartPanel) closeCart(); });
+    cartItems.addEventListener('click', event => {
+      const button = event.target.closest('button[data-action]');
+      if (!button) return;
+      const id = Number(button.dataset.id);
+      if (button.dataset.action === 'plus') changeQuantity(id, 1);
+      if (button.dataset.action === 'minus') changeQuantity(id, -1);
+      if (button.dataset.action === 'remove') cart.delete(id), renderCart();
+    });
+    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.filter').forEach(item => item.classList.toggle('active', item === button));
+      const filter = button.dataset.filter;
+      let visible = 0;
+      products.forEach(product => {
+        const show = filter === 'All' || product.category === filter;
+        product.element.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.getElementById('emptyMessage').style.display = visible ? 'none' : 'block';
+    }));
+    document.querySelectorAll('[data-category-link]').forEach(link => link.addEventListener('click', () => {
+      const category = link.dataset.categoryLink;
+      const filterButton = document.querySelector(`.filter[data-filter="${category}"]`);
+      if (filterButton) filterButton.click();
+    }));
+    document.getElementById('checkout').addEventListener('click', () => {
+      const items = [...cart.values()];
+      if (!items.length) {
+        alert('Your cart is empty. Please add a product first.');
+        return;
+      }
+      const lines = items.map(item => `• ${item.name} x ${item.quantity} — ${money(item.price * item.quantity)}`);
+      const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const message = `Assalam-o-Alaikum Asia Sports! I would like to enquire about this order:\n\n${lines.join('\n')}\n\nEstimated total: ${money(total)}\n\nPlease confirm availability and final prices.`;
+      window.open('https://wa.me/923342072271?text=' + encodeURIComponent(message), '_blank', 'noopener');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderCart();
+  </script>
+</body>
+</html>
